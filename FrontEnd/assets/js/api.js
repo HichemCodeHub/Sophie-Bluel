@@ -1,17 +1,17 @@
 // Fetch Works
-async function fetchWorks() {
+async function fetchworks() {
   const response = await fetch('http://localhost:5678/api/works');
   return await response.json();
 }
 
 // Fetch Categories
-async function fetchCategory () {
+async function fetchcategory() {
   const response = await fetch('http://localhost:5678/api/categories');
   return await response.json();
 }
 
 // Fetch Login
-async function fetchLogin(data) {
+async function fetchlogin(data) {
 
   return fetch('http://localhost:5678/api/users/login', {
     method: 'POST',
@@ -24,7 +24,7 @@ async function fetchLogin(data) {
 }
 
 // Fetch Delete
-async function fetchDelete(projectId, token) {
+async function fetchdelete(projectId, token) {
   return fetch(`http://localhost:5678/api/works/${projectId}`, {
     method: 'DELETE',
     headers: {
@@ -34,13 +34,13 @@ async function fetchDelete(projectId, token) {
 }
 
 // Fetch Envoie des nouveaux travaux
-async function fetchSend(userToken, formData) {
+async function fetchsend(userToken, formData) {
   return fetch('http://localhost:5678/api/works', {
-    
-      method: 'POST',
-      headers: {
-          'Authorization': `Bearer ${userToken}`
-      },
-      body: formData
+
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${userToken}`
+    },
+    body: formData
   });
 }
